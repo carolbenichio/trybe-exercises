@@ -1,1 +1,0 @@
-Esta pasta possui exercícios realizad
