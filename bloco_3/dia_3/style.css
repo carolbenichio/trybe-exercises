@@ -20,7 +20,6 @@ div:nth-of-type(2) {
 
 div:nth-of-type(3) {
     color: purple;
-    font-style: initial;
 }
 
 div:nth-of-type(4) {
@@ -35,3 +34,6 @@ div:nth-of-type(3) {
     font-size: 30px;
 }
 
+div:nth-of-type(2n+1) {
+    font-style: italic;
+}
