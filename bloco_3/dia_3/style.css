@@ -1,22 +1,10 @@
-h1, p {
-    text-align: center;
-    
-}
-
-li {
+div:hover {
+    border: 2px solid pink;
     width: fit-content;
-    margin: auto;
-    padding: 0;
 }
 
-li:hover {
-    background-color: teal;
-}
-
-li:active {
-    color: whitesmoke;
-}
-
-ul,ol {
-    list-style: none;
+h3 {
+    margin: 0;
+    width: fit-content;
+    padding: 5px;
 }
