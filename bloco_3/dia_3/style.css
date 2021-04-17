@@ -1,39 +1,66 @@
-div:hover {
-    border: 2px solid pink;
-    width: fit-content;
+ol li {
+    background-color: yellow;
 }
 
-h3 {
-    margin: 0;
-    width: fit-content;
-    padding: 5px;
-}
-
-div:nth-of-type(1) {
-    color: blue;
-    font-style: oblique;
-}
-
-div:nth-of-type(2) {
+ol li:nth-child(2n) {
     color: green;
 }
 
-div:nth-of-type(3) {
-    color: purple;
+li.primo {
+    text-transform: uppercase;
 }
 
-div:nth-of-type(4) {
-    color: brown;
+h1, h2, h3, h4, h5, h6 {
+    color: red;
 }
 
-div:nth-of-type(5) {
-    color: grey;
+h1 em, h1 em, h3 em, h4 em, h5 em, h6 em {
+    font-size: 40px;
+    border: 1px solid black;
 }
 
-div:nth-of-type(3) {
-    font-size: 30px;
+li {
+    font-size: 20px;
 }
 
-div:nth-of-type(2n+1) {
-    font-style: italic;
+li em {
+    font-weight: 800;
+}
+
+ul.linguagens li:nth-child(1), ul.linguagens li:nth-child(2), ul.linguagens li:nth-child(3) {
+    color: blue;
+}
+
+ul.linguagens li.java {
+    background-color: magenta;
+}
+
+ul.aliados li:nth-child(1):hover {
+    color: orange;
+    font-weight: 700;
+}
+
+ul.aliados li:nth-child(2):hover {
+    color: green;
+    font-weight: 700;
+}
+
+ul.aliados li:nth-child(3):hover {
+    color: black;
+    font-weight: 700;
+}
+
+ul.aliados li:nth-child(4):hover {
+    color: yellow;
+    font-weight: 700;
+}
+
+ul.aliados li:nth-child(5):hover {
+    color: green;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
