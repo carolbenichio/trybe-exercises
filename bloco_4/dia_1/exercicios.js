@@ -9,11 +9,11 @@ let multi = a*b;
 let div = a/b;
 let resto = a%b;
 
-console.log(adicao);
-console.log(subtracao);
-console.log(multi);
-console.log(div);
-console.log(resto);
+console.log("A soma dos números é: "+adicao);
+console.log("A subração dos números é: "+subtracao);
+console.log("A multiplicação dos números é: "+multi);
+console.log("A divisão dos números é: "+div);
+console.log("O resto da divisão dos números é: "+resto);
 
 //2)
 
@@ -21,9 +21,9 @@ let c = 2;
 let d = 4;
 
 if (c > d) {
-    console.log(c);
+    console.log("Este número é maior: "+c);
 } else {
-    console.log(d);
+    console.log("Este número é maior: "+d);
 };
 
 //3)
@@ -33,11 +33,11 @@ let f = 9;
 let g = 3;
 
 if (e > f && e > g) {
-    console.log(e);
+    console.log("Este número é maior: "+e);
 } else if (f > g) {
-    console.log(f);
+    console.log("Este número é maior: "+f);
 } else {
-    console.log(g);
+    console.log("Este número é maior: "+g);
 };
 
 //4
@@ -55,14 +55,18 @@ if (h > 0) {
 //5
 
 let ang1 = 40;
-let ang2 = 50;
+let ang2 = -50;
 let ang3 = 90;
 let soma = ang1+ang2+ang3;
 let valid = true;
 let notValid = false;
 
-if (ang1 < 0 || ang2 < 0 || ang3 < 0) {
-    console.log("Ângulo inválido");
+if (ang1 < 0) {
+    console.log("Ângulo 1 é inválido");
+} else if (ang2 < 0) {
+    console.log("Ângulo 2 é inválido");
+} else if (ang3 < 0) {
+    console.log("Ângulo 3 é inválido");
 } else if (soma == 180) {
     console.log(valid);
 } else {
@@ -76,27 +80,27 @@ let lowerCase = peça.toLowerCase();
 
 switch (lowerCase) {
     case "peao":
-        console.log("peao: uma casa pra frente");
+        console.log("Peão: uma casa pra frente");
         break;
 
     case "torre":
-        console.log("torre: quantas casas quiser na vertical e horizontal");
+        console.log("Torre: quantas casas quiser na vertical e horizontal");
         break;
 
     case "cavalo":
-        console.log("cavalo: anda em L");
+        console.log("Cavalo: anda em L");
         break;
     
     case "bispo": 
-        console.log("bispo: quantas casas quiser nas diagonais");
+        console.log("Bispo: quantas casas quiser nas diagonais");
         break;
     
     case "dama": 
-        console.log("dama: quantas casas quiser em todas as direcoes");
+        console.log("Dama: quantas casas quiser em todas as direcoes");
         break;
 
     case "rei":
-        console.log("rei: uma casa em todas as direcoes");
+        console.log("Rei: uma casa em todas as direcoes");
         break;
     
     default:
@@ -161,12 +165,11 @@ let venda = 40;
 let lucro = venda-custoTotal;
 let qtd = 1000;
 
-console.log("O valor do lucro da venda de 1000 produtos é:")
-console.log(qtd*lucro);
+console.log("O valor do lucro da venda é: "+(qtd*lucro));
 
 //11
 
-let salarioBruto = 3000.0;
+let salarioBruto = 2000.0;
 let inss = 0;
 let ir = 0;
 let salarioFinal = 0;
@@ -185,6 +188,7 @@ let salarioINSS = salarioBruto - inss;
 
 if (salarioINSS <= 1903.98) {
     ir = 0;
+    salarioFinal = salarioINSS;
 } else if (salarioINSS >= 1903.99 && salarioINSS <= 2826.65) {
     salarioFinal = salarioINSS - ((salarioINSS*0.075) - 142.80)
 } else if (salarioINSS >= 2826.55 && salarioINSS <= 3751.05) {
@@ -195,6 +199,6 @@ if (salarioINSS <= 1903.98) {
     salarioFinal = salarioINSS - ((salarioINSS*0.275) - 869.36)
 }
 
-console.log(salarioFinal)
+console.log("Seu salário liquido é "+salarioFinal)
 
 //fim!
