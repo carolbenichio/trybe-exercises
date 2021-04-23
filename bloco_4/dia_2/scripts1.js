@@ -32,3 +32,9 @@ for (let index = 0; index < groceryList.length; index +=1) {
 
 //FOR OF
 //1
+
+let names = ['João', 'Maria', 'Antônio', 'Margarida'];
+
+for (let name of names) {
+    console.log(name);
+}
