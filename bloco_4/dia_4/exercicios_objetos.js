@@ -41,3 +41,5 @@ console.log(info.nota + ' e ' + info2.nota);
 if (info.recorrente === 'Sim' && info2.recorrente === 'Sim') {
     console.log('Ambos recorrentes');
 }
+
+//fim
