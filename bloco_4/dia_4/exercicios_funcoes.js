@@ -65,7 +65,7 @@ console.log(menor(numeros));
 
 //4 - Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.
 
-let nomes = ['Joana', 'Laura', 'Caroline', 'Francisquinha'];
+let nomes = ['Joana', 'Laura', 'Caroline', 'Fernanda'];
 let maiorPalavra = nomes[0];
 
 function maior (nomes) {
@@ -79,4 +79,52 @@ function maior (nomes) {
 
 console.log(maior(nomes));
 
-//5 
+//5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
+
+//Array de teste: [2, 3, 2, 5, 8, 2, 3];.
+//Valor esperado no retorno da função: 2.
+let numeros = [2, 3, 2, 5, 8, 2, 3];
+
+function inteiroMaisSeRepete (numeros) {
+    let comparaContador = 0;
+    let numeroMaisRepetido = '';
+    for (let index = 0; index < numeros.length; index +=1) {
+        let contador = 0;
+        for (let index2 = 0; index2 < numeros.length; index2 +=1) {
+            if (numeros[index] === numeros[index2]) {
+                contador +=1;
+            }
+        }
+        if (contador > comparaContador) {
+            comparaContador = contador;
+            numeroMaisRepetido = numeros[index];
+        }
+    }
+    console.log(numeroMaisRepetido, comparaContador); 
+}
+inteiroMaisSeRepete(numeros);
+
+//6 - Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.
+//Valor de teste: N = 5.
+//Valor esperado no retorno da função: 1+2+3+4+5 = 15.
+
+let n = 5;
+
+function somatorio (n) {
+    let soma = 0;
+    for (let index = n; index > 0; index -=1) {
+        soma += index;
+    }
+    return soma;
+}
+console.log(somatorio(n));
+
+//7 - Crie uma função que receba uma string word e outra string ending. Verifique se a string ending é o final da string word. Considere que a string ending sempre será menor que a string word.
+//Valor de teste: 'trybe' e 'be'
+//Valor esperado no retorno da função: true
+//verificaFimPalavra('trybe', 'be');
+//Retorno esperado: true
+//verificaFimPalavra('joaofernando', 'fernan');
+//Retorno esperado: false
+
+
