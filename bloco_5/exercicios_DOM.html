@@ -60,15 +60,22 @@
             fundoVermelho.style.backgroundColor = "white";
         }
         mudaCor2();
+
+        //4  Crie uma função que corrija o texto da tag <h1>.
+        function correcao(){ 
+            let textoH1 = document.getElementsByTagName("h1")[0];
+            textoH1.innerHTML = "Exercício 5.1 - JavaScript"
+        }
+        correcao();
+
+        
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
         - document.getElementsByClassName()
         - document.getElementsByTagName()
  
- 
- Crie uma função que corrija o texto da tag <h1>.
- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
     </script>
