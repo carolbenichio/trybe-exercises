@@ -74,12 +74,20 @@
             texto.innerHTML = texto.innerHTML.toUpperCase();
         }
         upper();
+
+        //6 Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+        function console(){
+            let print = document.getElementsByTagName("p");
+            for (let index = 0; index < print.length; index += 1) {
+                console.log(print[index].innerHTML); 
+            }   
+        }
+        console();
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
         - document.getElementsByClassName()
         - document.getElementsByTagName()
-  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
     </script>
   </body>
