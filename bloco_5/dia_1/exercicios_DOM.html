@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.1</title>
+
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Exercício 5.1 - JavaEscripito </h1>
+    <div class="main-content">
+      <div class="center-content">
+        <p>Texto padrão do nosso site</p>
+        <p>-----</p>
+        <p>Trybe</p>
+      </div>
+    </div>
+    <script>
+        //1 Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício):
+
+        function mudaTexto(){
+            let primeiroParagrafo = document.getElementsByTagName("p")[1];
+            primeiroParagrafo.innerHTML = "Me vejo rica e mais feliz";
+        }
+        mudaTexto();
+
+        //2 Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+        function mudaCor(){
+            let fundoQuadrado = document.getElementsByClassName("main-content")[0];
+            fundoQuadrado.style.backgroundColor = "rgb(76,164,109)";
+        }
+        mudaCor();
+
+        //3 Crie uma função que mude a cor do quadrado vermelho para branco.
+        function mudaCor2() {
+            let fundoVermelho = document.getElementsByClassName("center-content")[0];
+            fundoVermelho.style.backgroundColor = "white";
+        }
+        mudaCor2();
+
+        //4  Crie uma função que corrija o texto da tag <h1>.
+        function correcao(){ 
+            let textoH1 = document.getElementsByTagName("h1")[0];
+            textoH1.innerHTML = "Exercício 5.1 - JavaScript"
+        }
+        correcao();
+
+        //5   Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+        function upper(){
+            let texto = document.getElementsByTagName("p")[0];
+            texto.innerHTML = texto.innerHTML.toUpperCase();
+        }
+        upper();
+
+        //6 Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+        function console(){
+            let print = document.getElementsByTagName("p");
+            for (let index = 0; index < print.length; index += 1) {
+                console.log(print[index].innerHTML); 
+            }   
+        }
+        console();
+        /*
+        Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
+        - document.getElementById()
+        - document.getElementsByClassName()
+        - document.getElementsByTagName()
+        */
+    </script>
+  </body>
+</html>
