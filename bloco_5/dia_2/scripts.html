@@ -20,7 +20,8 @@
         </div>
         </div>
     <script>
-			//1 Acesse o elemento elementoOndeVoceEsta.
+      //Parte 1
+      //1 Acesse o elemento elementoOndeVoceEsta.
 			const elementoOndeVoceEsta = document.getElementById("elementoOndeVoceEsta");
 
 			//2 Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
@@ -45,6 +46,27 @@
 
 			//8 Agora acesse o terceiroFilho a partir de pai .
 			const terceiroFilho2 = pai.lastElementChild.previousElementSibling;
+    
+      //Parte 2
+
+      //1 Crie um irmão para elementoOndeVoceEsta.
+      let irmaoElementoOndeVoceEsta = document.createElement('div');
+      irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+      pai.appendChild(irmaoElementoOndeVoceEsta);
+
+      //2 Crie um filho pro elementoOndeVoceEsta.
+      let filhoElementoOndeVoceEsta = document.createElement('div');
+      filhoElementoOndeVoceEsta.id = 'filhoElementoOndeVoceEsta';
+      elementoOndeVoceEsta.appendChild(filhoElementoOndeVoceEsta);
+
+      //3 Crie um filho para primeiroFilhoDoFilho.
+      const primeiroFilhoDoElementoOndeVoceEsta = document.getElementById("primeiroFilhoDoFilho");
+      let filhoDoPrimeiroFilhoDoFilho = document.createElement('div');
+      filhoDoPrimeiroFilhoDoFilho.id = 'filhoDoPrimeiroFilhoDoFilho';
+      primeiroFilhoDoElementoOndeVoceEsta.appendChild(filhoDoPrimeiroFilhoDoFilho);
+
+      //4 A partir desse filho criado, acesse terceiroFilho .
+      let terceiroFilho3 = filhoDoPrimeiroFilhoDoFilho.parentElement.parentElement.nextElementSibling;
     </script>
 </body>
 </html>
