@@ -83,3 +83,58 @@
     </script>
 </body>
 </html>
+
+//1 Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+        
+        const titulo = document.createElement("h1");
+        titulo.className = 'titulo';
+        titulo.innerHTML = "Exercício 5.2 - JavaScript DOM";
+        document.body.appendChild(titulo);
+
+        //2 Adicione a tag div com a classe main-content como filho da tag body ;
+
+        const conteudoPrincipal = document.createElement("div");
+        conteudoPrincipal.className = "main-content";
+        document.body.appendChild(conteudoPrincipal);
+        
+        //3 Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+         
+        const conteudoCentral = document.createElement("div");
+        conteudoCentral.className = "center-content";
+        conteudoPrincipal.appendChild(conteudoCentral);
+
+        //4 Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+
+        const paragrafo = document.createElement("p");
+        paragrafo.innerHTML = "Bla bla bla bla! Bla bla, bla bla. Bla!";
+        conteudoCentral.appendChild("paragrafo");
+        
+        //5 Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+
+        const conteudoEsquerdo = document.createElement("div");
+        conteudoEsquerdo.className = "left-content";
+        conteudoPrincipal.appendChild("conteudoEsquerdo");
+
+        //6 Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+
+        const conteudoDireito = document.createElement("div");
+        conteudoDireito.className = "right-content";
+        conteudoPrincipal.appendChild("conteudoDireito");
+
+        //7 Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;
+
+        const imagemLinda = document.createElement("img");
+        imagemLinda.src = "https://picsum.photos/200";
+        imagemLinda.className = "small-image";
+        conteudoEsquerdo.appendChild(imagemLinda);
+
+        //8 Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+
+        const listaUL = document.createElement("ul");
+        conteudoDireito.appendChild("listaUL");
+        const arrayNumbers = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+        for (let key in arrayNumbers) {
+            const listaLI = document.createElement("li");
+            listaLI.innerHTML = arrayNumbers[key];
+            listaUL.appendChild(listaLI);
+        }
