@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel='stylesheet' href='style.css'>
+  <script src='script.js'></script>
+</head>
+<body>
+  <h1>Currículo</h1>
+  <form action='' method='get' enctype="multipart/form-data">
+  <fieldset>
+    <legend>Dados pessoais</legend>
+    <div>
+      <label for='name'>Nome:</label>
+        <input type='text' maxlength='40' required name='name' id='name' placeholder='Escreva seu nome aqui'>
+    </div>
+    <div>
+      <label for='email'>Email:</label>
+        <input type='text' maxlength="50" required name='email' id='email' placeholder='Escreva seu e-mail aqui'>
+    </div>
+    <div>
+      <label for='cpf'>CPF:</label>
+        <input type='text' maxlength="11" required name='cpf'id='cpf' placeholder='Escreva seu CPF aqui'>
+    </div>
+    <div>
+      <label for='endereco'>Endereço:</label>
+        <input type='text' maxlength="200" required name='endereco' id='endereco' placeholder='Escreva seu endereço aqui'>
+    </div>
+    <div>
+      <label for='cidade'>Cidade:</label>
+        <input type='text' maxlength="28" required name='cidade' id='cidade' placeholder='Escreva sua cidade aqui'>
+    </div>
+    <div>
+      <label for='estado'>Estado:</label>
+        <select name='estado' id='estado' required>
+          <option disabled selected value>Selecione seu estado</option>
+        </select>
+    </div>
+    <div>
+      <label for='moradia'>Moradia:
+        <input type="radio" name="moradia" id="casa" value="casa" required> <span>Casa</span>
+        <input type="radio" name="moradia" id="apto" value='apto' required><span>Apartamento</span>
+      </label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Dados sobre último emprego</legend>
+    <div>
+      <label for='resumo'>Resumo do currículo:</label>
+      <br>
+      <textarea name='resumo' id='resumo' maxlength='1000' cols='30' rows='5' required></textarea>
+    </div>
+    <div>
+      <label for='cargo'>Antigo cargo:</label>
+      <input type='text' name='cargo' id='cargo' maxlength='40' required placeholder='Escreva seu antigo cargo aqui'>
+    </div>
+    <div>
+      <label for='desc-cargo'>Descrição do antigo cargo:</label>
+      <br>
+      <textarea name='desc-cargo' id='descCargo' maxlength='500' required></textarea>
+    </div>
+    <div>
+      <label for='data-inicio'>Data de início:</label>
+      <input type='date' name='data-inicio' id='dataInicio' value=''>
+    </div>
+  </fieldset>
+  <br>
+  <button id='botao-enviar'>Enviar</button>
+  <button id='botao-limpar'>Limpar</button>
+  <form>
+</body>
+</html>
