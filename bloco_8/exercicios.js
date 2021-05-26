@@ -17,7 +17,7 @@ console.log(newEmployees(ficha));
 
 //2
 const resulSorteio = (num, callback) => {
-  let numSorteado = Math.floor(Math.random() * 5);
+  let numSorteado = Math.floor(Math.random() * 5) + 1;
   return callback(num, numSorteado);
 }
 
