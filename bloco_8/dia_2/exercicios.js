@@ -177,12 +177,35 @@ const books = [
 // assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult);
 
 //7 
-const expectedResult = false;
+const expectedResult = true;
 
+//Bruno
+// function authorUnique() {
+//   const arr = [];
+//   books.forEach((item) => arr.push(item.author.birthYear));
+//   return arr.every((item, index) => arr.indexOf(item) === index);
+// }
+// // x = [1, 2, 3, 4, 2];
+// // y = [0, 1, 2, 3, 4];
+
+//Gabarito
 function authorUnique() {
-  const arr = [];
-  books.forEach((item) => arr.push(item.author.birthYear));
-  return arr.every((item, index) => arr.indexOf(item) === index);
+  return !books.every((book) => books.some((bookSome) =>
+  (bookSome.author.birthYear === book.author.birthYear) && (bookSome.author.name !== book.author.name)));
 }
 
 assert.strictEqual(authorUnique(), expectedResult);
+
+//Thalles
+function authorUnique() {
+  const birthYearObj = {};
+  let result = true;
+  books.forEach((book) => {
+    if (!birthYearObj[book.author.birthYear]) {
+      birthYearObj[book.author.birthYear] = 1;
+    } else {
+      result = false;
+    }
+  });
+  return result;
+};
