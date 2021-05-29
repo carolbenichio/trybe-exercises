@@ -78,13 +78,16 @@ const books = [
 // assert.strictEqual(reduceNames(), expectedResult);
 
 //3 
-const expectedResult = 43;
+// const expectedResult = 43;
 
-function averageAge() {
-  const age = books.reduce((acc, book) => {
-    return acc + (book.releaseYear - book.author.birthYear);
-  }, 0);
-  return age/books.length;
-};
+// function averageAge() {
+//   const age = books.reduce((acc, book) => {
+//     return acc + (book.releaseYear - book.author.birthYear);
+//   }, 0);
+//   return age/books.length;
+// };
 
-assert.strictEqual(averageAge(), expectedResult);
+// assert.strictEqual(averageAge(), expectedResult);
+
+//4 
+
