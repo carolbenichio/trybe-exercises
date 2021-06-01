@@ -123,7 +123,7 @@ const { nationality = 'Brazilian' } = person;
 console.log(nationality);
 
 // fixacao default
-const getNationality = ({ firstName, nationality }) => nationality !== undefined ? `${firstName} is ${nationality}` : `${firstName} is Brazilian`;
+const getNationality = ({ firstName, nationality = 'Brazilian' }) => nationality !== undefined ? `${firstName} is ${nationality}` : `${firstName} is ${nationality}`;
 
 const person = {
   firstName: 'João',
