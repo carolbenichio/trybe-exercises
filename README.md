@@ -1,5 +1,4 @@
-# Trybe Exercises
-Módulo 1: Fundamentos do Desenvolvimento Web 👩‍💻
+# Trybe Exercises I
 
 ## Repositório de exercícios realizados durante a formação de Desenvolvedor Web Full-Stack na [Trybe](https://www.betrybe.com/). 🚀
 
@@ -7,7 +6,7 @@ Módulo 1: Fundamentos do Desenvolvimento Web 👩‍💻
 >
 >São mais de 1500 horas de formação que aborda fundamento de desenvolvimento web, desenvolviemento, Front-end, Back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais."
 
-### Fundamentos do Desenvolvimento Web 
+### Módulo 1: Fundamentos do Desenvolvimento Web 👩‍💻
 
 #### Bloco 1 - Unix & Bash ✅
 - [x] 1.3 Fundamentos do Desenvolvimento Web
