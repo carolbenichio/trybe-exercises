@@ -1,4 +1,5 @@
-# Trybe Exercises - Módulo 1: Fundamentos do Desenvolvimento Web 👩‍💻
+# Trybe Exercises
+Módulo 1: Fundamentos do Desenvolvimento Web 👩‍💻
 
 ## Repositório de exercícios realizados durante a formação de Desenvolvedor Web Full-Stack na [Trybe](https://www.betrybe.com/). 🚀
 
