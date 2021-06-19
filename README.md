@@ -1,6 +1,6 @@
-# Trybe Exercises I
+# Trybe Exercises 
 
-## Repositório de exercícios realizados durante a formação de Desenvolvedor Web Full-Stack na [Trybe](https://www.betrybe.com/). 🚀
+## Repositório de exercícios realizados durante a formação de Desenvolvedora Web Full-Stack na [Trybe](https://www.betrybe.com/). 🚀
 
 >"A Trybe é uma escola de desenvolvimento web que tem comprometimento genuíno com o sucesso profissional das pessoas estudantes. Com o Modelo de Sucesso Compartilhado, quem estuda na Trybe tem a opção de pagar apenas quando já estiver trabalhando.
 >
