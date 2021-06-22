@@ -6,24 +6,25 @@ const Task = (value, i) => {
   );
 }
 
-class TaskList extends React.Component {
-  render(props) {
-    const { array } = props;
-    return (
-      <ul>
-        { array.map(Task) }
-      </ul>
-    )
-  }
-}
-
-// const TaskList = (props) => {
-//   const { array } = props;
-//   return (
-//     <ul>
-//       { array.map(Task) }
-//     </ul>
-//   );
+// class TaskList extends React.Component {
+//   render(props) {
+//     const { array } = props;
+//     return (
+//       <ul>
+//         { array.map(Task) }
+//       </ul>
+//     )
+//   }
 // }
+
+const TaskList = (props) => {
+  console.log(props)
+  const { array } = props;
+  return (
+    <ul>
+      { array.map(Task) }
+    </ul>
+  );
+}
 
 export default TaskList;

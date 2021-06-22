@@ -6,7 +6,7 @@ import { musics, arrayTasks } from './Listas';
 function App() {
   return (
     <div>
-      <TaskList array={arrayTasks}/>
+      <TaskList array={arrayTasks} oi='tdbom' bla="bla"/>
       <TaskList array={musics}/>
     </div>
   );
