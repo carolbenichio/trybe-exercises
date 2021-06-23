@@ -1,0 +1,27 @@
+.pokemon {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 8px 8px rgba(219, 215, 215, 0.5);
+  width: 350px;
+  margin: 40px 0px 0px 40px;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  align-items: center;
+}
+
+.pokemon:hover {
+  transform: scale(1.03);
+}
+
+.pokemon img {
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+}
+
+.texto {
+  background-color: rgb(255, 253, 230);
+  border-radius: 8px;
+}
