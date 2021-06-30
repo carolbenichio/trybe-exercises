@@ -44,8 +44,8 @@ class App extends React.Component {
     do estado acontecerão uma depois da outra! */
 
     // handleChange(e) {
-    //   this.setState({ inputValue: e.target.value }) ?
-    // } CÓDIGO DA AULA
+      //   this.setState({ inputValue: e.target.value }) ?
+      // } CÓDIGO DA AULA
   };
   
   render() {
