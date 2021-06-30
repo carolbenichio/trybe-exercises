@@ -15,12 +15,18 @@ class DadJokes extends React.Component {
   }
 
   async fetchJoke() {
-    const requestHeaders = { headers: { Accept: 'application/json' } }
-    const requestReturn = await fetch('https://icanhazdadjoke.com/', requestHeaders)
-    const requestObject = await requestReturn.json();
-    this.setState({
-      jokeObj: requestObject,
-    })
+    this.setState(
+      { loading: true }, // primeiro parametro
+      async () => {
+        const requestHeaders = { headers: { Accept: 'application/json' } }
+        const requestReturn = await fetch('https://icanhazdadjoke.com/', requestHeaders)
+        const requestObject = await requestReturn.json();
+        this.setState({
+          loading: false,
+          jokeObj: requestObject,
+        })
+      }
+    )
   }
 
   componentDidMount() {
@@ -28,9 +34,16 @@ class DadJokes extends React.Component {
   }
 
   saveJoke() {
-    //Salvando a piada no array de piadas existentes
-
+    this.setState(({ storedJokes, jokeObj }) => ({
+      storedJokes: [...storedJokes, jokeObj]
+    }))
+    this.fetchJoke();
   }
+
+  // storedJokes = ['a', 'b']
+  // jokeObj = 'c'
+  // push funciona => [['a', 'b'], 'c']
+  // com spread => ['a', 'b', 'c'] 
 
   renderJokeElement() {
     return (
@@ -44,17 +57,15 @@ class DadJokes extends React.Component {
   }
 
   render() {
-    const { storedJokes } = this.state;
-    // const loadingElement = <span>Loading...</span>;
+    const { storedJokes, loading } = this.state;
+    const loadingElement = <span>Loading...</span>;
 
     return (
       <div>
         <span>
           {storedJokes.map(({ id, joke }) => (<p key={id}>{joke}</p>))}
         </span>
-
-      <span>RENDERIZAÇÃO CONDICIONAL</span>
-
+        <p>{loading ? loadingElement : this.renderJokeElement()}</p>
       </div>
     );
   }
