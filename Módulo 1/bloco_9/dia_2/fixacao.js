@@ -53,10 +53,11 @@ function verifiedFetch(url) {
 }
 
 function sendJokeToFriend(name) {
-  const message = verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
-    .then((joke) => `Oi ${name}, ouve essa: ${joke}`)
+  verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
+    .then((joke) => console.log(`Oi ${name}, ouve essa: ${joke}`))
+    // .then(msg => console.log(msg))
     .catch((err) => err);
-  console.log(message);
+  // console.log(message);
 }
 
 sendJokeToFriend("Anna");
@@ -79,6 +80,26 @@ async function sendJokeToFriend(name) {
     .then((joke) => `Oi ${name}, ouve essa: ${joke}`)
     .catch((err) => err);
   console.log(message);
+}
+
+sendJokeToFriend("Anna");
+
+// Outro jeito, sem then e catch
+
+const fetch = require('node-fetch');
+
+async function verifiedFetch(url) {
+  if (url === 'https://api.chucknorris.io/jokes/random?category=dev') {
+    const fetched = await fetch(url);
+    const fetchedJSON = await fetched.json();
+    return fetchedJSON.value;
+  }
+  throw new Error('endpoint não existe');
+}
+
+async function sendJokeToFriend(name) {
+  const message = await verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
+  return console.log(`Oi, ${name}! Ouve essa: ${message}`);
 }
 
 sendJokeToFriend("Anna");
