@@ -1,5 +1,5 @@
 // src/store/index.js
-import { compose, createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 const GET_IMAGE = 'GET_IMAGE';
@@ -50,8 +50,10 @@ function fetchAPI(state = initialState, action) {
       return state;
   }
 }
-const extension = window.devToolsExtension() || ((f) => f);
+// const extension = window.devToolsExtension() || ((f) => f);
 //store
-const store = createStore(fetchAPI, compose(applyMiddleware(thunk), extension));
+// const store = createStore(fetchAPI, compose(applyMiddleware(thunk), extension));
+
+const store = createStore(fetchAPI, applyMiddleware(thunk));
 
 export default store;
