@@ -1,0 +1,11 @@
+use("class");
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $currentDate: {
+      "lastUpdated": { $type: "timestamp" }
+  },
+  }
+);
+
+use("class");
+db.movies.find({title: "Home Alone"});
