@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 use("erp");
 db.clientes.aggregate([
   { $match: { 
@@ -11,3 +12,12 @@ db.clientes.aggregate([
       ]
   }}
 ]);
+=======
+use("class");
+db.movies.updateOne({
+  "title": "Godzilla"
+},
+{
+  $set: { budget: 1 }
+});
+>>>>>>> 57638dad7f0eed885e49349cc5a961c036d702fd

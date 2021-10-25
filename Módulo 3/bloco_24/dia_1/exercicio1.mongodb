@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 use("erp");
 db.clientes.aggregate([
   { $match: { sexo: "MASCULINO" } }
 ]);
+=======
+use("class");
+db.movies.updateOne({
+  "title": "Batman"
+}, {
+  $set: { "imdbRating": 7.7 }
+});
+>>>>>>> 57638dad7f0eed885e49349cc5a961c036d702fd
