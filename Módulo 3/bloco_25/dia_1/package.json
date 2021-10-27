@@ -7,11 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "imc": "node imc",
     "velocidade": "node velocidade",
-    "dia2": "node promise"
+    "dia2": "node promise",
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.1",
+    "node-fetch": "^3.0.0",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
   }
 }
