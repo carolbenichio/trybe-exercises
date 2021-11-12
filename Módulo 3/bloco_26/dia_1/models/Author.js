@@ -6,26 +6,26 @@ const getNewAuthor = (authorData) => {
   const { id, firstName, middleName, lastName } = authorData;
   
   const fullName = [firstName, middleName, lastName]
-      .filter((name) => name)
-      .join(' ');
+    .filter((name) => name)
+    .join(' ');
   
   return {
-      id,
-      firstName,
-      middleName,
-      lastName,
-      name: fullName,
-  };
+    id,
+    firstName,
+    middleName,
+    lastName,
+    name: fullName,
+   };
   };
 
-const serialize = (authorData) => {
-  return {
-    id: authorData.id,
-    firstName: authorData.first_name,
-    middleName: authorData.middle_name,
-    lastName: authorData.last_name
-  }
-}
+// const serialize = (authorData) => {
+//   return {
+//     id: authorData.id,
+//     firstName: authorData.first_name,
+//     middleName: authorData.middle_name,
+//     lastName: authorData.last_name
+//   }
+// }
 
 // SQL
 
@@ -41,16 +41,16 @@ const serialize = (authorData) => {
 const getAll = async () => {
   return connection()
   .then((db) => db.collection('authors').find().toArray())
-  .then((authors) =>
-    authors.map(({ _id, firstName, middleName, lastName }) =>
-    getNewAuthor({
-      id: _id,
-      firstName,
-      middleName,
-      lastName,
-    })
-  )
-  );
+  .then((authors) => {
+    return authors.map(({ _id, firstName, middleName, lastName }) => {
+      return {
+        id: _id,
+        firstName,
+        middleName,
+        lastName,
+      }
+    });
+  });
 }
 
 //SQL
@@ -87,15 +87,7 @@ const findById = async (id) => {
 
   const { firstName, middleName, lastName } = authorData;
 
-  return getNewAuthor({ id, firstName, middleName, lastName });
-};
-
-const isValid = (firstName, middleName, lastName) => {
-  if (!firstName || typeof firstName !== 'string') return false;
-  if (!lastName || typeof lastName !== 'string') return false;
-  if (middleName && typeof middleName !== 'string') return false;
-
-  return true;
+  return { id, firstName, middleName, lastName };
 };
 
 //SQL
@@ -108,12 +100,11 @@ const isValid = (firstName, middleName, lastName) => {
 const create = async (firstName, middleName, lastName) => {
   connection()
     .then((db) => db.collection('authors').insertOne({ firstName, middleName, lastName }))
-    .then(result => getNewAuthor({ id: result.insertedId, firstName, middleName, lastName }));
+    .then(result => { id: result.insertedId, firstName, middleName, lastName });
 }
 
 module.exports = {
   getAll,
   findById,
-  isValid,
   create,
 };
