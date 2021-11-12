@@ -1,5 +1,7 @@
 const connection = require('./connection');
 
+const { ObjectId } = require('mongodb');
+
 const getNewAuthor = (authorData) => {
   const { id, firstName, middleName, lastName } = authorData;
   
@@ -25,30 +27,67 @@ const serialize = (authorData) => {
   }
 }
 
+// SQL
+
+// const getAll = async () => {
+  // const [authors] = await connection.execute('SELECT id, first_name, middle_name, last_name FROM authors');
+  // 
+  // return authors.map(serialize).map(getNewAuthor);
+// };
+
+// MONGO
+// MongoDB não nos devolve um Array de colunas como o MySQL , e sim um objeto para cada documento encontrado.
+
 const getAll = async () => {
-  const [authors] = await connection.execute('SELECT id, first_name, middle_name, last_name FROM authors');
-  
-  return authors.map(serialize).map(getNewAuthor);
-};
+  return connection()
+  .then((db) => db.collection('authors').find().toArray())
+  .then((authors) =>
+    authors.map(({ _id, firstName, middleName, lastName }) =>
+    getNewAuthor({
+      id: _id,
+      firstName,
+      middleName,
+      lastName,
+    })
+  )
+  );
+}
 
+//SQL
+// const findById = async (id) => {
+//   // Repare que substituímos o id por `?` na query.
+//   // Depois, ao executá-la, informamos um array com o id para o método `execute`.
+//   // O `mysql2` vai realizar, de forma segura, a substituição do `?` pelo id informado.
+//   const query = 'SELECT id, first_name, middle_name, last_name FROM authors WHERE id = ?'
+//   const [ authorData ] = await connection.execute(query, [id]);
+
+//   if (authorData.length === 0) return null;
+
+//   // Utilizamos [0] para buscar a primeira linha, que deve ser a única no array de resultados, pois estamos buscando por ID.
+//   const { firstName, middleName, lastName } = serialize(authorData[0]);
+
+//   return getNewAuthor({
+//     id,
+//     firstName,
+//     middleName,
+//     lastName
+//   });
+// };
+
+// MONGO
 const findById = async (id) => {
-  // Repare que substituímos o id por `?` na query.
-  // Depois, ao executá-la, informamos um array com o id para o método `execute`.
-  // O `mysql2` vai realizar, de forma segura, a substituição do `?` pelo id informado.
-  const query = 'SELECT id, first_name, middle_name, last_name FROM authors WHERE id = ?'
-  const [ authorData ] = await connection.execute(query, [id]);
+  if (!ObjectId.isValid(id)) {
+    return null;
+  }
 
-  if (authorData.length === 0) return null;
+  const authorData = await connection()
+    .then((db) => db.collection('authors').findOne(new ObjectId(id)));
 
-  // Utilizamos [0] para buscar a primeira linha, que deve ser a única no array de resultados, pois estamos buscando por ID.
-  const { firstName, middleName, lastName } = serialize(authorData[0]);
+  if (!authorData) return null;
 
-  return getNewAuthor({
-    id,
-    firstName,
-    middleName,
-    lastName
-  });
+  const { firstName, middleName, lastName } = authorData;
+
+  return getNewAuthor({ id, firstName, middleName, lastName });
 };
 
 const isValid = (firstName, middleName, lastName) => {
@@ -59,11 +98,18 @@ const isValid = (firstName, middleName, lastName) => {
   return true;
 };
 
+//SQL
+// const create = async (firstName, middleName, lastName) => connection.execute(
+//   'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?,?,?)',
+//   [firstName, middleName, lastName],
+// );
 
-const create = async (firstName, middleName, lastName) => connection.execute(
-  'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?,?,?)',
-  [firstName, middleName, lastName],
-);
+//MONGO
+const create = async (firstName, middleName, lastName) => {
+  connection()
+    .then((db) => db.collection('authors').insertOne({ firstName, middleName, lastName }))
+    .then(result => getNewAuthor({ id: result.insertedId, firstName, middleName, lastName }));
+}
 
 module.exports = {
   getAll,
