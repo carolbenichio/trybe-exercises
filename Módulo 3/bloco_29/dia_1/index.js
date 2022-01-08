@@ -1,5 +1,3 @@
-// ./index.js
-
 const SCHOOL_DATA = {
   Standard: {
     approvalGrade: 0.7,

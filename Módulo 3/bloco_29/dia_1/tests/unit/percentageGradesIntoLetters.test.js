@@ -1,5 +1,3 @@
-// // ./tests/unit/percentageGradesIntoLetters.test.js
-
 // const { expect } = require('chai');
 
 // const { percentageGradesIntoLetters } = require('../../index');
