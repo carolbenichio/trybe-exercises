@@ -10,6 +10,8 @@ const disciplinesDict = {
 };
 
 describe('Testando a função "approvedStudents"', function () {
+  const APPROVAL_GRADE = { approvalGrade: 0.7 };
+
   describe('quando todas as notas são maior que 0.7', function () {
     it('retorna "true"', function () {
       const disciplines = [
@@ -17,7 +19,7 @@ describe('Testando a função "approvedStudents"', function () {
         { name: disciplinesDict.history, grade: 0.9 },
       ];
 
-      const result = approvedStudents({ disciplines });
+      const result = approvedStudents(disciplines, APPROVAL_GRADE);
 
       expect(result).to.be.equal(true);
     });
@@ -30,7 +32,7 @@ describe('Testando a função "approvedStudents"', function () {
         { name: disciplinesDict.history, grade: 0.2 },
       ];
 
-      const result = approvedStudents({ disciplines });
+      const result = approvedStudents(disciplines, APPROVAL_GRADE);
 
       expect(result).to.be.equal(false);
     });
@@ -43,7 +45,7 @@ describe('Testando a função "approvedStudents"', function () {
         { name: disciplinesDict.history, grade: 0.9 },
       ];
 
-      const result = approvedStudents({ disciplines });
+      const result = approvedStudents(disciplines, APPROVAL_GRADE);
 
       expect(result).to.be.equal(false);
     });

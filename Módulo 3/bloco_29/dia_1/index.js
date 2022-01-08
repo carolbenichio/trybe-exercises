@@ -1,5 +1,14 @@
 // ./index.js
 
+const SCHOOL_DATA = {
+  Standard: {
+    approvalGrade: 0.7,
+  },
+  Hogwarts: {
+    approvalGrade: 0.8,
+  },
+};
+
 /* Apoio para a função `getGradeLetter`, lembraremos disso mais a frente */
 const GRADE_DICT = {
   0.9: 'A',
@@ -38,8 +47,8 @@ const percentageGradesIntoLetters = ({ name, disciplines, school }) => ({
   disciplines: disciplines.map(getLetterGrades) });
 
 /* "Determinar" */
-const approvedStudents = ({ disciplines }) =>
-  disciplines.every(({ grade }) => grade > 0.7);
+const approvedStudents = (disciplines, { approvalGrade }) =>
+  disciplines.every(({ grade }) => grade > approvalGrade);
 
 /* "Atualizar" */
 const updateApprovalData = ({ name: studentName, disciplines }) => {
@@ -52,7 +61,7 @@ const updateApprovalData = ({ name: studentName, disciplines }) => {
 function setApproved(students) {
   students
     .map(percentageGradesIntoLetters)
-    .filter(approvedStudents)
+    .filter(({ disciplines, school }) => approvedStudents(disciplines, SCHOOL_DATA[school]))
     .map(updateApprovalData);
 }
 
