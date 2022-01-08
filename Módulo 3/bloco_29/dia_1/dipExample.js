@@ -1,5 +1,3 @@
-// ./dipExample.js
-
 const axios = require('axios').default;
 const fetch = require('node-fetch');
 
