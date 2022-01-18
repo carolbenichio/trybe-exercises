@@ -6,16 +6,12 @@ const io = require('socket.io')(http, {
   cors: {
     origin: 'http://localhost:3000', // url aceita pelo cors
     methods: ['GET', 'POST'], // Métodos aceitos pela url
-  }});
-
-// essa função vai ser executada sempre que um novo client se conectar ao servidor.
-io.on('connection', (socket) => {
-  console.log(`Usuário conectado. ID: ${socket.id} `);
-
-  socket.on('ping', () => {
-    console.log(`${socket.id} emitiu um ping!`);
-  });
+  }
 });
+
+app.use(express.static(__dirname + '/public'));
+
+require('./sockets/ping')(io);
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
