@@ -11,6 +11,10 @@ const io = require('socket.io')(http, {
 // essa função vai ser executada sempre que um novo client se conectar ao servidor.
 io.on('connection', (socket) => {
   console.log(`Usuário conectado. ID: ${socket.id} `);
+
+  socket.on('ping', () => {
+    console.log(`${socket.id} emitiu um ping!`);
+  });
 });
 
 app.get('/', (req, res) => {
