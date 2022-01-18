@@ -9,3 +9,12 @@ form.addEventListener('submit', (e) => {
   inputMessage.value = '';
   return false;
 });
+
+const createMessage = (message) => {
+  const messagesUl = document.querySelector('#messages');
+  const li = document.createElement('li');
+  li.innerText = message;
+  messagesUl.appendChild(li);
+};
+
+socket.on('msg', (message) => createMessage(message));
