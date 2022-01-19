@@ -17,4 +17,4 @@ const createMessage = (message) => {
   messagesUl.appendChild(li);
 };
 
-socket.on('msg', (message) => createMessage(message));
+socket.on('clientMessage', (message) => createMessage(message));
