@@ -1,0 +1,6 @@
+print("F")
+print("U")
+print("L")
+print("A")
+print("N")
+print("O")
