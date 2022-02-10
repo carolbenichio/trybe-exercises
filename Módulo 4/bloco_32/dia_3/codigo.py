@@ -5,4 +5,4 @@
 def divide(num, den):
   return num / den
 
-print(divide(2,0))
+print(divide(4,0))
